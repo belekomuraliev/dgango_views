@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Внесение в список учеников</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+      <p> ФИО ученика: {{pupil.name}}</p>
+      <p> Дата рождения ученика: {{pupil.birth_date}}</p>
+      <p> Учитель: {{pupil.teacher.name }}</p>
+    </div>
+    <button type="submit">Сохранить</button>
+</form>
+{% endblock content %}

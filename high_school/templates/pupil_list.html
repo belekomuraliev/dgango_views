@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Список учеников </h1>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">ФИО ученика</th>
+      <th scope="col">Дата рождения</th>
+      <th scope="col">Учитель</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for pupil in pupils %}
+    <tr>
+      <th scope="row">{{pupil.id}}</th>
+      <td>{{pupil.name}}</td>
+      <td>{{pupil.birth_date}}</td>
+      <td>{{pupil.teacher.name}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}

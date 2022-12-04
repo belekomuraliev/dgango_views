@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Информация об учителя{{ teacher.id }}</h1>
+<div>
+  <p> ФИО учителя: {{teacher.name }}</p>
+  <p> Класс: {{teacher.class_name }}</p>
+</div>
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Информация  о студента № {{ object.id }}</h1>
+<div>
+  <p> ФИО студента: {{object.name}}</p>
+  <p> Операционная система: {{object.laptop}}</p>
+  <p> Название курса: {{object.course.name}}</p>
+  <p> Ментор: {{object.course.mentor}}</p>
+</div>
+
+
+{% endblock content %}

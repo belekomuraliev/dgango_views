@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse_lazy
+
 
 class Course(models.Model):
     name = models.CharField(max_length=30, verbose_name='Название курса')
@@ -7,6 +9,9 @@ class Course(models.Model):
 
     def __repr__(self):
         return self.name
+    def get_absolute_url(self):
+        return reverse_lazy('course_detail', kwargs={'id':self.id})
+
 
 class Student(models.Model):
     name = models.CharField(max_length=20, verbose_name='ФИО Студента')
@@ -19,4 +24,6 @@ class Student(models.Model):
 
     def __repr__(self):
         return self.name
+    def get_absolute_url(self):
+        return reverse_lazy('student_detail', kwargs={'pk':self.id})
 

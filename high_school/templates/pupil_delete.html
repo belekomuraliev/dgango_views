@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Удалить ученика № {{pupil.id}}</h1>
+<p>Вы действительно хотите удалить {{ pupil.name}}</p>
+<form method="POST">
+    {% csrf_token %}
+
+    <button class="btn btn-danger">Удалить</button>
+</form>
+<a  class=" btn btn-warning"  href="{%url 'pupil_detail' pupil.id %}">Назад</a>
+{% endblock content %}

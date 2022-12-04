@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Информация об ученике {{ pupil.id }}</h1>
+<div>
+  <p> ФИО ученика: {{pupil.name}}</p>
+  <p> Дата рождения ученика: {{pupil.birth_date}}</p>
+  <p> Учитель: {{pupil.teacher }}</p>
+</div>
+{% endblock content %}
